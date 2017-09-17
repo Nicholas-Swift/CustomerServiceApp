@@ -12,6 +12,7 @@ class MainFeedViewController: UIViewController {
     
     // MARK: - Instance Vars
     var chats: [Chat] = []
+    var mainFeedSocketController: MainFeedSocketController!
     
     // MARK: - Subviews
     @IBOutlet weak var tableView: UITableView!
@@ -25,9 +26,7 @@ class MainFeedViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let selectedRow = tableView.indexPathForSelectedRow {
-            tableView.deselectRow(at: selectedRow, animated: false)
-        }
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,6 +60,30 @@ extension MainFeedViewController {
     
 }
 
+// MARK: - Main Feed Socket Controller
+extension MainFeedViewController: MainFeedSocketControllerDelegate {
+    
+    func setupMainFeedSocketController() {
+        mainFeedSocketController = MainFeedSocketController()
+        mainFeedSocketController.delegate = self
+    }
+    
+    func newChatWasAdded(chat: Chat) {
+        
+        // Need to see if already have chat.....
+        for (index, currentChat) in chats.enumerated() {
+            if chat.id == currentChat.id {
+                chats.remove(at: index)
+                break
+            }
+        }
+        
+        chats.insert(chat, at: 0)
+        tableView.reloadData()
+    }
+    
+}
+
 // MARK: - Setup Models
 extension MainFeedViewController {
     
@@ -68,6 +91,7 @@ extension MainFeedViewController {
         ChatService.getChats() { (chats: [Chat]) in
             self.chats = chats
             self.tableView.reloadData()
+            self.setupMainFeedSocketController()
         }
     }
     
@@ -78,8 +102,9 @@ extension MainFeedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let chatViewController = ChatViewController.controllerFromNib() as! ChatViewController
-        let chat = chats[indexPath.row]
-        chatViewController.setupModels(oldChat: chat)
+        chats[indexPath.row].isUnread = false
+        tableView.reloadRows(at: [indexPath], with: .none)
+        chatViewController.setupModels(oldChat: chats[indexPath.row])
         self.navigationController?.pushViewController(chatViewController, animated: true)
     }
     
@@ -102,6 +127,9 @@ extension MainFeedViewController: UITableViewDataSource {
         let chat = chats[indexPath.row]
         cell.setupModel(chat: chat)
         cell.setStylingSeen()
+        if chat.isUnread {
+            cell.setStylingUnseen()
+        }
         return cell
     }
     

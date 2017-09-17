@@ -20,6 +20,9 @@
 		010FFE011F6E1EA400C37C47 /* NetworkingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010FFE001F6E1EA400C37C47 /* NetworkingRouter.swift */; };
 		010FFE031F6E1EB600C37C47 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010FFE021F6E1EB600C37C47 /* NetworkingProvider.swift */; };
 		0177DFA61F6E8EBF00031192 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177DFA51F6E8EBF00031192 /* ChatRoomController.swift */; };
+		0177DFA81F6E9E2000031192 /* MainFeedSocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177DFA71F6E9E2000031192 /* MainFeedSocketController.swift */; };
+		0177DFAA1F6EA69C00031192 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177DFA91F6EA69C00031192 /* SettingsViewController.swift */; };
+		0177DFAC1F6EA6E400031192 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0177DFAB1F6EA6E400031192 /* SettingsViewController.xib */; };
 		0181DE2A1F6E258000540CA4 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE291F6E258000540CA4 /* ChatService.swift */; };
 		0181DE2C1F6E25F700540CA4 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE2B1F6E25F700540CA4 /* Chat.swift */; };
 		0181DE2E1F6E280F00540CA4 /* Array+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE2D1F6E280F00540CA4 /* Array+Random.swift */; };
@@ -61,6 +64,9 @@
 		010FFE001F6E1EA400C37C47 /* NetworkingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingRouter.swift; sourceTree = "<group>"; };
 		010FFE021F6E1EB600C37C47 /* NetworkingProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
 		0177DFA51F6E8EBF00031192 /* ChatRoomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
+		0177DFA71F6E9E2000031192 /* MainFeedSocketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedSocketController.swift; sourceTree = "<group>"; };
+		0177DFA91F6EA69C00031192 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0177DFAB1F6EA6E400031192 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		0181DE291F6E258000540CA4 /* ChatService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		0181DE2B1F6E25F700540CA4 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		0181DE2D1F6E280F00540CA4 /* Array+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Random.swift"; sourceTree = "<group>"; };
@@ -174,15 +180,18 @@
 				01F86B701F6DE37F00271414 /* LoginViewController.xib */,
 				0181DE351F6E5F7100540CA4 /* LoginViewControllerPage.swift */,
 				0181DE371F6E5F8700540CA4 /* LoginViewControllerPage.xib */,
+				0177DFA71F6E9E2000031192 /* MainFeedSocketController.swift */,
 				01F86B721F6DE3E500271414 /* MainFeedViewController.swift */,
 				01F86B741F6DE3FE00271414 /* MainFeedViewController.xib */,
+				0177DFA51F6E8EBF00031192 /* ChatRoomController.swift */,
 				010FFDEC1F6DEBDC00C37C47 /* ChatViewController.swift */,
 				010FFDEE1F6DEBE700C37C47 /* ChatViewController.xib */,
 				0181DE391F6E690A00540CA4 /* SignUpViewController.swift */,
 				0181DE3B1F6E691600540CA4 /* SignUpViewController.xib */,
 				0181DE3D1F6E6A4100540CA4 /* ActualLogInViewController.swift */,
 				0181DE3F1F6E6A4B00540CA4 /* ActualLogInViewController.xib */,
-				0177DFA51F6E8EBF00031192 /* ChatRoomController.swift */,
+				0177DFA91F6EA69C00031192 /* SettingsViewController.swift */,
+				0177DFAB1F6EA6E400031192 /* SettingsViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 				01F86B751F6DE3FE00271414 /* MainFeedViewController.xib in Resources */,
 				01F86B711F6DE37F00271414 /* LoginViewController.xib in Resources */,
 				010FFDF71F6DF46700C37C47 /* ChatMessageOtherTableViewCell.xib in Resources */,
+				0177DFAC1F6EA6E400031192 /* SettingsViewController.xib in Resources */,
 				010FFDEF1F6DEBE700C37C47 /* ChatViewController.xib in Resources */,
 				0181DE401F6E6A4B00540CA4 /* ActualLogInViewController.xib in Resources */,
 				01F86B651F6DE2A200271414 /* LaunchScreen.storyboard in Resources */,
@@ -377,9 +387,11 @@
 				010FFDED1F6DEBDC00C37C47 /* ChatViewController.swift in Sources */,
 				0181DE3A1F6E690A00540CA4 /* SignUpViewController.swift in Sources */,
 				01F86B771F6DE50B00271414 /* ChatHeadTableViewCell.swift in Sources */,
+				0177DFA81F6E9E2000031192 /* MainFeedSocketController.swift in Sources */,
 				0181DE341F6E445D00540CA4 /* JSON+Date.swift in Sources */,
 				010FFE011F6E1EA400C37C47 /* NetworkingRouter.swift in Sources */,
 				0181DE441F6E736400540CA4 /* String+Utilities.swift in Sources */,
+				0177DFAA1F6EA69C00031192 /* SettingsViewController.swift in Sources */,
 				0181DE301F6E296B00540CA4 /* UIColor+Project.swift in Sources */,
 				0181DE361F6E5F7100540CA4 /* LoginViewControllerPage.swift in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  ChatRoomController.swift
+//  MainFeedSocketController.swift
 //  CustomerServiceApp
 //
 //  Created by Nicholas Swift on 9/17/17.
@@ -10,18 +10,18 @@ import Foundation
 import SocketIO
 import SwiftyJSON
 
-protocol ChatRoomControllerDelegate: class {
-    func otherMessageWasAdded(with message: Message)
+protocol MainFeedSocketControllerDelegate: class {
+    func newChatWasAdded(chat: Chat)
 }
 
-class ChatRoomController {
+class MainFeedSocketController {
     
     // MARK: - Instance Vars
-    weak var delegate: ChatRoomControllerDelegate?
+    weak var delegate: MainFeedSocketControllerDelegate?
     let socket: SocketIOClient
     
     // MARK: - Init
-    init(chat: Chat) {
+    init() {
         socket = SocketIOClient(socketURL: URL(string: "https://customer-service-backend.herokuapp.com")!, config: [.log(true), .compress])
         
         socket.on(clientEvent: .connect) { data, ack in
@@ -30,19 +30,13 @@ class ChatRoomController {
             print("socket connected")
         }
         
-        socket.on("newMessage\(chat.id)") { [weak self] data, ack in
+        socket.on("newMessage") { [weak self] data, ack in
             let json = JSON(data)
             print(json)
             
-            let newMessage = Message(json: json[0]["message"])!
-            self?.delegate?.otherMessageWasAdded(with: newMessage)
-        }
-        
-        socket.on("read") { [weak self] data, ack in
-            
-            let json = JSON(data)
-            print(json)
-            
+            var newChat = Chat(json: json[0]["chat"])!
+            newChat.isUnread = true
+            self?.delegate?.newChatWasAdded(chat: newChat)
         }
         
         socket.connect()

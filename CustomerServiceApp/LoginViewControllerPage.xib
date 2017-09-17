@@ -22,16 +22,16 @@
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="176-ZH-9kB">
-                        <rect key="frame" x="161" y="343.5" width="53" height="46.5"/>
+                        <rect key="frame" x="37.5" y="343.5" width="300" height="46.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qG-EZ-dU3">
-                                <rect key="frame" x="10" y="0.0" width="33.5" height="20.5"/>
+                                <rect key="frame" x="133.5" y="0.0" width="33.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqK-mX-nmm">
-                                <rect key="frame" x="0.0" y="28.5" width="53" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqK-mX-nmm">
+                                <rect key="frame" x="0.0" y="28.5" width="300" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,6 +49,7 @@
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
+                    <constraint firstItem="HqK-mX-nmm" firstAttribute="width" secondItem="ARa-HI-LcZ" secondAttribute="width" multiplier="0.8" id="0My-9p-pTx"/>
                     <constraint firstItem="JpG-qd-NaL" firstAttribute="centerX" secondItem="ARa-HI-LcZ" secondAttribute="centerX" id="Ndq-1I-1Sy"/>
                     <constraint firstItem="176-ZH-9kB" firstAttribute="centerX" secondItem="ARa-HI-LcZ" secondAttribute="centerX" id="TRg-vK-fy7"/>
                     <constraint firstItem="176-ZH-9kB" firstAttribute="centerY" secondItem="ARa-HI-LcZ" secondAttribute="centerY" multiplier="1.1" id="acC-dg-Osd"/>

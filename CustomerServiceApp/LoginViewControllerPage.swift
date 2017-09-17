@@ -17,9 +17,9 @@ class LoginViewControllerPage: UIViewController {
                   "Secure and correct",
                   "Stay on top of your product.\nAnytime. Anywhere."]
     var subtitles = ["Swipe to learn more",
-                     "Yeah man easy as 123",
-                     "Yeah man easy as 123",
-                     "Yeah man easy as 123"]
+                     "All your feedback, whether text, email, or more, will be aggregated on this dashboard for you.",
+                     "Once you sign up, you are given a phone number and email to give out to customers to sign up for.",
+                     "Nice bro"]
     
     // MARK: - Subviews
     @IBOutlet weak var infoTitleLabel: UILabel!

@@ -18,6 +18,8 @@ struct Chat {
     let updatedAt: Date
     let type: String
     
+    var isUnread: Bool = false
+    
     // MARK: - Inits
     init?(json: JSON) {
         guard

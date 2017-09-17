@@ -180,11 +180,12 @@ extension ChatViewController: ChatBarViewDelegate {
 extension ChatViewController: ChatRoomControllerDelegate {
     
     func otherMessageWasAdded(with message: Message) {
-//        print(text)
-//        
-//        let newChat = Chat(id: chat!.id, user: chat!.user, messages: chat!.messages + [message], updatedAt: message.updatedAt, type: chat!.type)
-//        self.chat = newChat
-//        self.tableView.insertRows(at: [IndexPath(], with: .bottom)
+        let newChat = Chat(id: chat!.id, user: chat!.user, messages: chat!.messages + [message], updatedAt: message.updatedAt, type: chat!.type)
+        self.chat = newChat
+        
+        self.tableView.reloadData()
+        let bottomIndexPath = IndexPath(row: chat!.messages.count - 1, section: 0)
+        self.tableView.scrollToRow(at: bottomIndexPath, at: .bottom, animated: false)
     }
     
 }
