@@ -33,8 +33,11 @@ class ChatHeadTableViewCell: UITableViewCell {
 extension ChatHeadTableViewCell {
     
     func setupViews() {
-        profilePictureImageView.layer.cornerRadius = profilePictureImageView.bounds.width / 2
         profilePictureImageView.backgroundColor = UIColor.lightGray
+        profilePictureImageView.layer.cornerRadius = profilePictureImageView.bounds.width / 2
+        profilePictureImageView.layer.borderColor = UIColor.csaAlmostWhite().cgColor
+        profilePictureImageView.layer.borderWidth = 0.5
+        profilePictureImageView.clipsToBounds = true
     }
     
 }
@@ -47,9 +50,9 @@ extension ChatHeadTableViewCell {
         messageLabel.font = UIFont.boldSystemFont(ofSize: 15)
         timeLabel.font = UIFont.boldSystemFont(ofSize: 15)
         
-        usernameLabel.textColor = UIColor.black
-        messageLabel.textColor = UIColor.black
-        timeLabel.textColor = UIColor.black
+        usernameLabel.textColor = UIColor.csaBlack()
+        messageLabel.textColor = UIColor.csaBlack()
+        timeLabel.textColor = UIColor.csaBlack()
     }
     
     func setStylingSeen() {
@@ -57,9 +60,9 @@ extension ChatHeadTableViewCell {
         messageLabel.font = UIFont.systemFont(ofSize: 15)
         timeLabel.font = UIFont.systemFont(ofSize: 15)
         
-        usernameLabel.textColor = UIColor.black
-        messageLabel.textColor = UIColor.lightGray
-        timeLabel.textColor = UIColor.lightGray
+        usernameLabel.textColor = UIColor.csaDarkText()
+        messageLabel.textColor = UIColor.csaLightText()
+        timeLabel.textColor = UIColor.csaLightText()
     }
     
 }

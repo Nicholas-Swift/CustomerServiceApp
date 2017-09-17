@@ -81,8 +81,19 @@ extension MainFeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChatHeadTableViewCell.toString(), for: indexPath)
             as! ChatHeadTableViewCell
+        cell.profilePictureImageView.image = TESTprofilePicture()
         cell.setStylingSeen()
         return cell
+    }
+    
+}
+
+// MARK: - TEST DATA
+extension MainFeedViewController {
+    
+    func TESTprofilePicture() -> UIImage {
+        let possibleImages = ["brianhans", "nickswift", "rinniswift"]
+        return UIImage(named: possibleImages.random())!
     }
     
 }

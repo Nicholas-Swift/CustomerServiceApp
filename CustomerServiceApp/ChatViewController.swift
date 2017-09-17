@@ -68,18 +68,22 @@ extension ChatViewController {
         tableView.register(ChatMessageOtherTableViewCell.nib(), forCellReuseIdentifier: ChatMessageOtherTableViewCell.toString())
         tableView.register(ChatMessageSelfTableViewCell.nib(), forCellReuseIdentifier: ChatMessageSelfTableViewCell.toString())
         
+        tableView.separatorColor = UIColor.clear
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.separatorColor = UIColor.clear
+        tableView.contentInset = UIEdgeInsetsMake(64, 0, 48, 0)
+        tableView.scrollIndicatorInsets = UIEdgeInsetsMake(64, 0, 48, 0)
+        
         let bottomIndexPath = IndexPath(row: messages.count - 1, section: 0)
         tableView.scrollToRow(at: bottomIndexPath, at: .bottom, animated: false)
     }
     
     func setupChatBarView() {
+        chatBarViewPlaceholder.backgroundColor = UIColor.clear
         chatBarView = ChatBarView.instanceFromNib() as! ChatBarView
         self.view.addSubview(chatBarView)
         NSLayoutConstraint.activate([

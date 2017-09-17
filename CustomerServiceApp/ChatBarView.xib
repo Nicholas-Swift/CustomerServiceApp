@@ -12,11 +12,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="lQz-iF-cCq" customClass="ChatBarView" customModule="CustomerServiceApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Aa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qXD-Po-dhU">
-                    <rect key="frame" x="64" y="12.5" width="247" height="35"/>
+                    <rect key="frame" x="64" y="6.5" width="247" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="h4e-4N-vez"/>
                     </constraints>
@@ -25,7 +25,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75e-dw-lrL">
-                    <rect key="frame" x="315" y="8" width="44" height="44"/>
+                    <rect key="frame" x="315" y="2" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="44" id="JsU-pD-kDN"/>
                         <constraint firstAttribute="height" constant="44" id="hkD-cK-jwE"/>
@@ -33,7 +33,7 @@
                     <state key="normal" title="Send"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-w7-vxg">
-                    <rect key="frame" x="16" y="8" width="44" height="44"/>
+                    <rect key="frame" x="16" y="2" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="Zpc-f4-DA5"/>
                         <constraint firstAttribute="width" constant="44" id="vU5-ol-og3"/>
@@ -60,7 +60,7 @@
                 <outlet property="sendButton" destination="75e-dw-lrL" id="3KV-5x-Q5Q"/>
                 <outlet property="textTextField" destination="qXD-Po-dhU" id="lj6-He-Vfj"/>
             </connections>
-            <point key="canvasLocation" x="25.5" y="-241"/>
+            <point key="canvasLocation" x="25.5" y="-247"/>
         </view>
     </objects>
 </document>

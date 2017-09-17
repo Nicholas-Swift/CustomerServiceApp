@@ -19,6 +19,7 @@ class ChatBarView: UIView {
     // MARK: - View Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupViews()
     }
 }
 
@@ -26,7 +27,18 @@ class ChatBarView: UIView {
 extension ChatBarView {
     
     func setupViews() {
+        setupBlur()
         textTextField.delegate = self
+    }
+    
+    func setupBlur() {
+        self.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        
+        let visualEffect = UIBlurEffect(style: .light)
+        let visualEffectView = UIVisualEffectView(effect: visualEffect)
+        visualEffectView.frame = self.bounds
+        visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.insertSubview(visualEffectView, at: 0)
     }
     
 }

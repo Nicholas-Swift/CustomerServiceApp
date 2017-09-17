@@ -13,6 +13,7 @@ class ChatMessageSelfTableViewCell: UITableViewCell {
     // MARK: - Subviews
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var messageHighlightView: UIView!
+    @IBOutlet weak var bottomRightImageView: UIImageView!
     
     // MARK: - View Lifecycle
     override func awakeFromNib() {
@@ -30,7 +31,15 @@ class ChatMessageSelfTableViewCell: UITableViewCell {
 extension ChatMessageSelfTableViewCell {
     
     func setupViews() {
-        messageHighlightView.layer.cornerRadius = 8
+        self.selectionStyle = .none
+        setupBottomRightImageView()
+        messageHighlightView.layer.cornerRadius = 16
+    }
+    
+    func setupBottomRightImageView() {
+        bottomRightImageView.backgroundColor = UIColor.csaAlmostWhite()
+        bottomRightImageView.layer.cornerRadius = bottomRightImageView.bounds.width / 2
+        bottomRightImageView.clipsToBounds = true
     }
     
 }
@@ -39,7 +48,13 @@ extension ChatMessageSelfTableViewCell {
 extension ChatMessageSelfTableViewCell {
     
     func set(text: String) {
-        messageLabel.text = text
+        let attributedText = NSMutableAttributedString(string: text)
+        
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 2
+        attributedText.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSRange(location: 0, length: text.characters.count))
+        
+        messageLabel.attributedText = attributedText
         messageLabel.sizeToFit()
     }
     

@@ -14,6 +14,7 @@ class ChatMessageOtherTableViewCell: UITableViewCell {
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var messageHighlightView: UIView!
+    @IBOutlet weak var bottomRightImageView: UIImageView!
 
     // MARK: - View Lifecycle
     override func awakeFromNib() {
@@ -31,10 +32,21 @@ class ChatMessageOtherTableViewCell: UITableViewCell {
 extension ChatMessageOtherTableViewCell {
     
     func setupViews() {
+        self.selectionStyle = .none
+        setupProfilePictureImageView()
+        setupBottomRightImageView()
+        messageHighlightView.layer.cornerRadius = 16
+    }
+    
+    func setupProfilePictureImageView() {
         profilePictureImageView.layer.cornerRadius = profilePictureImageView.bounds.width / 2
-        profilePictureImageView.backgroundColor = UIColor.lightGray
-        
-        messageHighlightView.layer.cornerRadius = 8
+        profilePictureImageView.backgroundColor = UIColor.csaAlmostWhite()
+    }
+    
+    func setupBottomRightImageView() {
+        bottomRightImageView.backgroundColor = UIColor.csaAlmostWhite()
+        bottomRightImageView.layer.cornerRadius = bottomRightImageView.bounds.width / 2
+        bottomRightImageView.clipsToBounds = true
     }
     
 }
@@ -43,7 +55,13 @@ extension ChatMessageOtherTableViewCell {
 extension ChatMessageOtherTableViewCell {
     
     func set(text: String) {
-        messageLabel.text = text
+        let attributedText = NSMutableAttributedString(string: text)
+        
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 2
+        attributedText.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSRange(location: 0, length: text.characters.count))
+        
+        messageLabel.attributedText = attributedText
         messageLabel.sizeToFit()
     }
     
