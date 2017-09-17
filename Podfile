@@ -8,5 +8,6 @@ target 'CustomerServiceApp' do
   # Pods for CustomerServiceApp
   pod 'Alamofire', '~> 4.5'
   pod 'SwiftyJSON'
+  pod 'Socket.IO-Client-Swift'
 
 end

@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Aa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qXD-Po-dhU">
-                    <rect key="frame" x="64" y="6.5" width="247" height="35"/>
+                    <rect key="frame" x="16" y="6.5" width="295" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="h4e-4N-vez"/>
                     </constraints>
@@ -32,31 +32,20 @@
                     </constraints>
                     <state key="normal" title="Send"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-w7-vxg">
-                    <rect key="frame" x="16" y="2" width="44" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="Zpc-f4-DA5"/>
-                        <constraint firstAttribute="width" constant="44" id="vU5-ol-og3"/>
-                    </constraints>
-                    <state key="normal" title="&gt;&gt;"/>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="75e-dw-lrL" firstAttribute="leading" secondItem="qXD-Po-dhU" secondAttribute="trailing" constant="4" id="21e-Ee-YQY"/>
-                <constraint firstItem="qXD-Po-dhU" firstAttribute="leading" secondItem="ezO-w7-vxg" secondAttribute="trailing" constant="4" id="51a-Ol-Eia"/>
-                <constraint firstItem="ezO-w7-vxg" firstAttribute="leading" secondItem="lQz-iF-cCq" secondAttribute="leading" constant="16" id="ULZ-su-RKK"/>
+                <constraint firstItem="qXD-Po-dhU" firstAttribute="leading" secondItem="lQz-iF-cCq" secondAttribute="leading" constant="16" id="TTi-E7-zPQ"/>
                 <constraint firstItem="75e-dw-lrL" firstAttribute="centerY" secondItem="lQz-iF-cCq" secondAttribute="centerY" id="Y03-NI-NiH"/>
                 <constraint firstItem="qXD-Po-dhU" firstAttribute="centerY" secondItem="lQz-iF-cCq" secondAttribute="centerY" id="ddf-U4-rHf"/>
                 <constraint firstAttribute="trailing" secondItem="75e-dw-lrL" secondAttribute="trailing" constant="16" id="gzr-Es-SKT"/>
-                <constraint firstItem="ezO-w7-vxg" firstAttribute="centerY" secondItem="lQz-iF-cCq" secondAttribute="centerY" id="kLE-5n-T2J"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="moreButton" destination="ezO-w7-vxg" id="X3s-vX-vOY"/>
                 <outlet property="sendButton" destination="75e-dw-lrL" id="3KV-5x-Q5Q"/>
                 <outlet property="textTextField" destination="qXD-Po-dhU" id="lj6-He-Vfj"/>
             </connections>

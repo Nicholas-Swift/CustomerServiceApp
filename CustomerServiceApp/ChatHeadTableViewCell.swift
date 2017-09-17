@@ -20,6 +20,7 @@ class ChatHeadTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupViews()
+        self.selectionStyle = .none
     }
     
     override func prepareForReuse() {
@@ -33,7 +34,7 @@ class ChatHeadTableViewCell: UITableViewCell {
 extension ChatHeadTableViewCell {
     
     func setupViews() {
-        profilePictureImageView.backgroundColor = UIColor.lightGray
+        profilePictureImageView.backgroundColor = UIColor.csaAlmostWhite()
         profilePictureImageView.layer.cornerRadius = profilePictureImageView.bounds.width / 2
         profilePictureImageView.layer.borderColor = UIColor.csaAlmostWhite().cgColor
         profilePictureImageView.layer.borderWidth = 0.5

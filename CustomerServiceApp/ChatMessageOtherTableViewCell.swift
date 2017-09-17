@@ -24,6 +24,7 @@ class ChatMessageOtherTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        profilePictureImageView.isHidden = false
     }
     
 }

@@ -16,13 +16,15 @@ struct Chat {
     let user: User
     let messages: [Message]
     let updatedAt: Date
+    let type: String
     
     // MARK: - Inits
     init?(json: JSON) {
         guard
             let id = json["_id"].string,
             let user = User(json: json["chatUser"]),
-            let updatedAt = json["updatedAt"].string?.toISO8601Date
+            let updatedAt = json["updatedAt"].string?.toISO8601Date,
+            let type = json["type"].string
         else {
             return nil
         }
@@ -31,13 +33,14 @@ struct Chat {
         let messages = allMessages.isEmpty ? [lastMessage] : allMessages
         
         
-        self.init(id: id, user: user, messages: messages, updatedAt: updatedAt)
+        self.init(id: id, user: user, messages: messages, updatedAt: updatedAt, type: type)
     }
     
-    init(id: String, user: User, messages: [Message], updatedAt: Date) {
+    init(id: String, user: User, messages: [Message], updatedAt: Date, type: String) {
         self.id = id
         self.user = user
         self.messages = messages
         self.updatedAt = updatedAt
+        self.type = type
     }
 }

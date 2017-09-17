@@ -43,7 +43,9 @@ extension MainFeedViewController {
     func setupViews() {
         
         // Navigation Item
-        navigationItem.title = "Main Feed"
+        navigationItem.title = "Dashboard"
+        let item = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = item
         
         // Table View
         tableView.register(ChatHeadTableViewCell.nib(), forCellReuseIdentifier: ChatHeadTableViewCell.toString())
@@ -98,21 +100,9 @@ extension MainFeedViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChatHeadTableViewCell.toString(), for: indexPath)
             as! ChatHeadTableViewCell
         let chat = chats[indexPath.row]
-        
-        cell.profilePictureImageView.image = TESTprofilePicture()
         cell.setupModel(chat: chat)
         cell.setStylingSeen()
         return cell
-    }
-    
-}
-
-// MARK: - TEST DATA
-extension MainFeedViewController {
-    
-    func TESTprofilePicture() -> UIImage {
-        let possibleImages = ["brianhans", "nickswift", "rinniswift"]
-        return UIImage(named: possibleImages.random())!
     }
     
 }

@@ -21,18 +21,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MeY-Md-Lvk">
-                        <rect key="frame" x="10" y="65.5" width="32" height="32"/>
+                        <rect key="frame" x="10" y="73.5" width="32" height="32"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="TMy-jo-zOA"/>
                             <constraint firstAttribute="width" constant="32" id="tkB-jq-5vS"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Flf-F2-6ef">
-                        <rect key="frame" x="50" y="2.5" width="250" height="99.5"/>
+                        <rect key="frame" x="50" y="1.5" width="250" height="107.5"/>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label Label Label Label Label Label Label Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUX-Tc-PZ1">
-                        <rect key="frame" x="66" y="10" width="218" height="83.5"/>
+                        <rect key="frame" x="66" y="9" width="218" height="91.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -46,13 +46,13 @@
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="MeY-Md-Lvk" secondAttribute="bottom" constant="4" id="6vD-Sw-DY5"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="MeY-Md-Lvk" secondAttribute="bottom" constant="-4" id="6vD-Sw-DY5"/>
                     <constraint firstItem="hUX-Tc-PZ1" firstAttribute="leading" secondItem="MeY-Md-Lvk" secondAttribute="trailing" constant="24" id="CDZ-Il-6K3"/>
                     <constraint firstItem="hUX-Tc-PZ1" firstAttribute="width" relation="lessThanOrEqual" secondItem="wo3-mY-YBj" secondAttribute="width" multiplier="0.6" id="CYU-He-nYv"/>
                     <constraint firstItem="MeY-Md-Lvk" firstAttribute="leading" secondItem="wo3-mY-YBj" secondAttribute="leadingMargin" constant="2" id="DEQ-GT-f3S"/>
-                    <constraint firstItem="hUX-Tc-PZ1" firstAttribute="top" secondItem="wo3-mY-YBj" secondAttribute="topMargin" constant="2" id="ROz-Cs-lsF"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="hUX-Tc-PZ1" secondAttribute="bottom" constant="1" id="Gzt-eL-XW1"/>
+                    <constraint firstItem="hUX-Tc-PZ1" firstAttribute="top" secondItem="wo3-mY-YBj" secondAttribute="topMargin" constant="1" id="ROz-Cs-lsF"/>
                     <constraint firstItem="Flf-F2-6ef" firstAttribute="centerX" secondItem="hUX-Tc-PZ1" secondAttribute="centerX" id="WU7-gd-HL7"/>
-                    <constraint firstItem="hUX-Tc-PZ1" firstAttribute="bottom" secondItem="MeY-Md-Lvk" secondAttribute="bottom" constant="-4" id="WWa-Ad-NiU"/>
                     <constraint firstAttribute="trailing" secondItem="DcB-fc-hZH" secondAttribute="trailing" constant="4" id="dvB-m2-tyd"/>
                     <constraint firstItem="Flf-F2-6ef" firstAttribute="height" secondItem="hUX-Tc-PZ1" secondAttribute="height" constant="16" id="jEY-hl-Y0h"/>
                     <constraint firstItem="Flf-F2-6ef" firstAttribute="centerY" secondItem="hUX-Tc-PZ1" secondAttribute="centerY" id="nHu-s0-dGS"/>

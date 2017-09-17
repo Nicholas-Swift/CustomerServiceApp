@@ -13,13 +13,13 @@ class LoginViewControllerPage: UIViewController {
     // MARK: - Instance Vars
     var pageIndex: Int!
     var titles = ["Welcome to Customer Service App",
-                  "Easy CS dashboard.\nDo it the easy way!",
+                  "Easy dashboard.\nDo it the easy way!",
                   "Secure and correct",
                   "Stay on top of your product.\nAnytime. Anywhere."]
     var subtitles = ["Swipe to learn more",
-                     "Yeah man easy as balls",
-                     "Yeah man easy as balls",
-                     "Yeah man easy as balls"]
+                     "Yeah man easy as 123",
+                     "Yeah man easy as 123",
+                     "Yeah man easy as 123"]
     
     // MARK: - Subviews
     @IBOutlet weak var infoTitleLabel: UILabel!

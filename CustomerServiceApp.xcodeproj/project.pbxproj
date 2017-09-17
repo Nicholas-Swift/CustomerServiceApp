@@ -19,6 +19,7 @@
 		010FFDFF1F6E17B000C37C47 /* ChatBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010FFDFE1F6E17B000C37C47 /* ChatBarView.xib */; };
 		010FFE011F6E1EA400C37C47 /* NetworkingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010FFE001F6E1EA400C37C47 /* NetworkingRouter.swift */; };
 		010FFE031F6E1EB600C37C47 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010FFE021F6E1EB600C37C47 /* NetworkingProvider.swift */; };
+		0177DFA61F6E8EBF00031192 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177DFA51F6E8EBF00031192 /* ChatRoomController.swift */; };
 		0181DE2A1F6E258000540CA4 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE291F6E258000540CA4 /* ChatService.swift */; };
 		0181DE2C1F6E25F700540CA4 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE2B1F6E25F700540CA4 /* Chat.swift */; };
 		0181DE2E1F6E280F00540CA4 /* Array+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE2D1F6E280F00540CA4 /* Array+Random.swift */; };
@@ -59,6 +60,7 @@
 		010FFDFE1F6E17B000C37C47 /* ChatBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatBarView.xib; sourceTree = "<group>"; };
 		010FFE001F6E1EA400C37C47 /* NetworkingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingRouter.swift; sourceTree = "<group>"; };
 		010FFE021F6E1EB600C37C47 /* NetworkingProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
+		0177DFA51F6E8EBF00031192 /* ChatRoomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
 		0181DE291F6E258000540CA4 /* ChatService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		0181DE2B1F6E25F700540CA4 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		0181DE2D1F6E280F00540CA4 /* Array+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Random.swift"; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				0181DE3B1F6E691600540CA4 /* SignUpViewController.xib */,
 				0181DE3D1F6E6A4100540CA4 /* ActualLogInViewController.swift */,
 				0181DE3F1F6E6A4B00540CA4 /* ActualLogInViewController.xib */,
+				0177DFA51F6E8EBF00031192 /* ChatRoomController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				01F86B5D1F6DE2A200271414 /* LoginViewController.swift in Sources */,
 				0181DE2E1F6E280F00540CA4 /* Array+Random.swift in Sources */,
 				0181DE2A1F6E258000540CA4 /* ChatService.swift in Sources */,
+				0177DFA61F6E8EBF00031192 /* ChatRoomController.swift in Sources */,
 				010FFE031F6E1EB600C37C47 /* NetworkingProvider.swift in Sources */,
 				01F86B731F6DE3E500271414 /* MainFeedViewController.swift in Sources */,
 				010FFDF91F6DFB5200C37C47 /* Message.swift in Sources */,

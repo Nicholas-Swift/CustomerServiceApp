@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SocketIO
 
 class ChatViewController: UIViewController {
     
     // MARK: - Instance Vars
     var chat: Chat?
+    var chatRoomController: ChatRoomController!
     
     // MARK: - Subviews
     @IBOutlet weak var tableView: UITableView!
@@ -40,11 +42,15 @@ extension ChatViewController {
     
     func setupModels(oldChat: Chat) {
         navigationItem.title = oldChat.user.name
+        
         ChatService.showChat(id: oldChat.id) { [weak self] (chat: Chat) in
             self?.chat = chat
             self?.tableView.reloadData()
             let bottomIndexPath = IndexPath(row: chat.messages.count - 1, section: 0)
             self?.tableView.scrollToRow(at: bottomIndexPath, at: .bottom, animated: false)
+            
+            self?.chatRoomController = ChatRoomController(chat: chat)
+            self?.chatRoomController.delegate = self
         }
     }
     
@@ -166,6 +172,19 @@ extension ChatViewController: ChatBarViewDelegate {
             ChatService.sendChat(chatID: chat.id, text: text)
         }
         chatBarView.textTextField.resignFirstResponder()
+    }
+    
+}
+
+// MARK: - Chat Room Controller Delegate
+extension ChatViewController: ChatRoomControllerDelegate {
+    
+    func otherMessageWasAdded(with message: Message) {
+//        print(text)
+//        
+//        let newChat = Chat(id: chat!.id, user: chat!.user, messages: chat!.messages + [message], updatedAt: message.updatedAt, type: chat!.type)
+//        self.chat = newChat
+//        self.tableView.insertRows(at: [IndexPath(], with: .bottom)
     }
     
 }

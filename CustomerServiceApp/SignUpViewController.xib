@@ -37,13 +37,14 @@
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBk-eq-pga">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBk-eq-pga">
                         <rect key="frame" x="16" y="20" width="44" height="44"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="Voq-P4-Eoz"/>
                             <constraint firstAttribute="width" constant="44" id="ncZ-cm-NdY"/>
                         </constraints>
-                        <state key="normal" title="Close"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="8"/>
+                        <state key="normal" image="icons8-Delete Filled"/>
                     </button>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="glA-4T-LmU">
                         <rect key="frame" x="80.5" y="84" width="214.5" height="57.5"/>
@@ -85,4 +86,7 @@
             <point key="canvasLocation" x="110.5" y="-0.5"/>
         </viewController>
     </objects>
+    <resources>
+        <image name="icons8-Delete Filled" width="22" height="22"/>
+    </resources>
 </document>
