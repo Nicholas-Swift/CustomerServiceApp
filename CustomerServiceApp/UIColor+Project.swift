@@ -18,6 +18,10 @@ extension UIColor {
         return UIColor.white
     }
     
+    static func csaBlue() -> UIColor {
+        return UIColor(red: 13/255, green: 96/255, blue: 250/255, alpha: 1)
+    }
+    
     static func csaAlmostWhite() -> UIColor {
         return UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
     }

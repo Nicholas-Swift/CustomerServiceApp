@@ -12,6 +12,7 @@ import Alamofire
 enum NetworkingRouter {
     case getChat
     case showChat(id: String)
+    case sendChat(chatID: String, text: String)
     
     public var baseURL: String {
         return "https://customer-service-backend.herokuapp.com"
@@ -23,15 +24,17 @@ enum NetworkingRouter {
             return "/chat"
         case .showChat(let id):
             return "/chat/\(id)"
+        case .sendChat(let chatID, let _):
+            return "/chat/\(chatID)/messages"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getChat:
+        case .getChat, .showChat:
             return .get
-        case .showChat:
-            return .get
+        case .sendChat:
+            return .post
         }
     }
     
@@ -39,14 +42,17 @@ enum NetworkingRouter {
         switch self {
         case .getChat, .showChat:
             return nil
+        case .sendChat:
+            return ["Content-type": "application/json"]
         }
-        //return ["Content-type": "application/json"]
     }
     
     var parameters: [String: Any]? {
         switch self {
         case .getChat, .showChat:
             return nil
+        case .sendChat(let _, let text):
+            return ["text": text, "fromUser": false]
         }
     }
 }

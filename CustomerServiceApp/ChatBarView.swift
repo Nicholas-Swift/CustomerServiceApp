@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol ChatBarViewDelegate: class {
+    func chatBarView(_ chatBarView: ChatBarView, sent text: String)
+}
+
 class ChatBarView: UIView {
+    
+    // MARK: - Instance Vars
+    weak var delegate: ChatBarViewDelegate?
     
     // MARK: - Subviews
     @IBOutlet weak var moreButton: UIButton!
@@ -28,6 +35,7 @@ extension ChatBarView {
     
     func setupViews() {
         setupBlur()
+        sendButton.addTarget(self, action: #selector(tapSendButton), for: .touchUpInside)
         textTextField.delegate = self
     }
     
@@ -39,6 +47,16 @@ extension ChatBarView {
         visualEffectView.frame = self.bounds
         visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.insertSubview(visualEffectView, at: 0)
+    }
+    
+}
+
+// MARK: - Buttons
+extension ChatBarView {
+    
+    func tapSendButton() {
+        delegate?.chatBarView(self, sent: textTextField.text ?? "")
+        textTextField.text = ""
     }
     
 }

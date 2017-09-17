@@ -22,11 +22,11 @@ struct Message {
         guard
             let id = json["_id"].string,
             let text = json["text"].string,
-            let fromUser = json["fromUser"].bool
+            let fromUser = json["fromUser"].bool,
+            let updatedAt = json["updatedAt"].string?.toISO8601Date
         else {
             return nil
         }
-        let updatedAt = json["updatedAt"].dateValue
         
         self.init(id: id, text: text, updatedAt: updatedAt, fromUser: fromUser)
     }

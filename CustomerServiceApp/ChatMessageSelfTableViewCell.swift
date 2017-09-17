@@ -44,8 +44,13 @@ extension ChatMessageSelfTableViewCell {
     
 }
 
-// MARK: - View Helpers
+// MARK: - Setup Models
 extension ChatMessageSelfTableViewCell {
+    
+    func setupModel(message: Message) {
+        set(text: message.text)
+        bottomRightImageView.isHidden = true
+    }
     
     func set(text: String) {
         let attributedText = NSMutableAttributedString(string: text)

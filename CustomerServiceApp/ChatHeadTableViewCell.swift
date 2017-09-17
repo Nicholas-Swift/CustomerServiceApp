@@ -48,6 +48,7 @@ extension ChatHeadTableViewCell {
     func setupModel(chat: Chat) {
         usernameLabel.text = chat.user.name
         messageLabel.text = chat.messages.last?.text
+        timeLabel.text = chat.updatedAt.shortDateStringFromNow
     }
     
 }

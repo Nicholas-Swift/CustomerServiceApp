@@ -77,6 +77,7 @@ extension ChatViewController {
     func setupChatBarView() {
         chatBarViewPlaceholder.backgroundColor = UIColor.clear
         chatBarView = ChatBarView.instanceFromNib() as! ChatBarView
+        chatBarView.delegate = self
         self.view.addSubview(chatBarView)
         NSLayoutConstraint.activate([
             chatBarView.topAnchor.constraint(equalTo: chatBarViewPlaceholder.topAnchor),
@@ -141,15 +142,30 @@ extension ChatViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = chat!.messages[indexPath.row]
+        let nextMessage = indexPath.row + 1 < chat!.messages.count ? chat!.messages[indexPath.row + 1] : nil
         if message.fromUser {
             let cell = tableView.dequeueReusableCell(withIdentifier: ChatMessageOtherTableViewCell.toString(), for: indexPath) as! ChatMessageOtherTableViewCell
-            cell.set(text: message.text)
+            cell.setupModel(message: message, nextMessage: nextMessage)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: ChatMessageSelfTableViewCell.toString(), for: indexPath) as! ChatMessageSelfTableViewCell
-            cell.set(text: message.text)
+            cell.setupModel(message: message)
             return cell
         }
+    }
+    
+}
+
+// MARK: - ChatBarViewDelegate
+extension ChatViewController: ChatBarViewDelegate {
+    
+    func chatBarView(_ chatBarView: ChatBarView, sent text: String) {
+        
+        // Send stuff
+        if let chat = chat {
+            ChatService.sendChat(chatID: chat.id, text: text)
+        }
+        chatBarView.textTextField.resignFirstResponder()
     }
     
 }

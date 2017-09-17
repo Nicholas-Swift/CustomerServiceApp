@@ -31,6 +31,8 @@
 		0181DE3C1F6E691600540CA4 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0181DE3B1F6E691600540CA4 /* SignUpViewController.xib */; };
 		0181DE3E1F6E6A4100540CA4 /* ActualLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE3D1F6E6A4100540CA4 /* ActualLogInViewController.swift */; };
 		0181DE401F6E6A4B00540CA4 /* ActualLogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0181DE3F1F6E6A4B00540CA4 /* ActualLogInViewController.xib */; };
+		0181DE421F6E734300540CA4 /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE411F6E734300540CA4 /* Date+Utilities.swift */; };
+		0181DE441F6E736400540CA4 /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE431F6E736400540CA4 /* String+Utilities.swift */; };
 		01F86B5B1F6DE2A200271414 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F86B5A1F6DE2A200271414 /* AppDelegate.swift */; };
 		01F86B5D1F6DE2A200271414 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F86B5C1F6DE2A200271414 /* LoginViewController.swift */; };
 		01F86B601F6DE2A200271414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F86B5E1F6DE2A200271414 /* Main.storyboard */; };
@@ -69,6 +71,8 @@
 		0181DE3B1F6E691600540CA4 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		0181DE3D1F6E6A4100540CA4 /* ActualLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualLogInViewController.swift; sourceTree = "<group>"; };
 		0181DE3F1F6E6A4B00540CA4 /* ActualLogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActualLogInViewController.xib; sourceTree = "<group>"; };
+		0181DE411F6E734300540CA4 /* Date+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
+		0181DE431F6E736400540CA4 /* String+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
 		01F86B571F6DE2A200271414 /* CustomerServiceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomerServiceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F86B5A1F6DE2A200271414 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01F86B5C1F6DE2A200271414 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				0181DE2D1F6E280F00540CA4 /* Array+Random.swift */,
 				0181DE2F1F6E296B00540CA4 /* UIColor+Project.swift */,
 				0181DE331F6E445D00540CA4 /* JSON+Date.swift */,
+				0181DE411F6E734300540CA4 /* Date+Utilities.swift */,
+				0181DE431F6E736400540CA4 /* String+Utilities.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 				010FFDEB1F6DE98900C37C47 /* UIResponder+Utilities.swift in Sources */,
 				010FFDF11F6DF27500C37C47 /* ChatMessageSelfTableViewCell.swift in Sources */,
 				0181DE3E1F6E6A4100540CA4 /* ActualLogInViewController.swift in Sources */,
+				0181DE421F6E734300540CA4 /* Date+Utilities.swift in Sources */,
 				0181DE2C1F6E25F700540CA4 /* Chat.swift in Sources */,
 				01F86B5B1F6DE2A200271414 /* AppDelegate.swift in Sources */,
 				010FFDED1F6DEBDC00C37C47 /* ChatViewController.swift in Sources */,
@@ -368,6 +375,7 @@
 				01F86B771F6DE50B00271414 /* ChatHeadTableViewCell.swift in Sources */,
 				0181DE341F6E445D00540CA4 /* JSON+Date.swift in Sources */,
 				010FFE011F6E1EA400C37C47 /* NetworkingRouter.swift in Sources */,
+				0181DE441F6E736400540CA4 /* String+Utilities.swift in Sources */,
 				0181DE301F6E296B00540CA4 /* UIColor+Project.swift in Sources */,
 				0181DE361F6E5F7100540CA4 /* LoginViewControllerPage.swift in Sources */,
 			);

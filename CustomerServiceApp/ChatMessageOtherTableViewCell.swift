@@ -51,8 +51,19 @@ extension ChatMessageOtherTableViewCell {
     
 }
 
-// MARK: - View Helpers
+// MARK: - Setup Models
 extension ChatMessageOtherTableViewCell {
+    
+    func setupModel(message: Message, nextMessage: Message?) {
+        set(text: message.text)
+        bottomRightImageView.isHidden = true
+        
+        if let nextMessage = nextMessage {
+            if nextMessage.fromUser {
+                profilePictureImageView.isHidden = true
+            }
+        }
+    }
     
     func set(text: String) {
         let attributedText = NSMutableAttributedString(string: text)

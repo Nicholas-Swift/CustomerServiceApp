@@ -26,7 +26,7 @@ class MainFeedViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let selectedRow = tableView.indexPathForSelectedRow {
-            tableView.deselectRow(at: selectedRow, animated: animated)
+            tableView.deselectRow(at: selectedRow, animated: false)
         }
     }
     

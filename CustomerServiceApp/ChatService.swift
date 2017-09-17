@@ -30,4 +30,11 @@ class ChatService {
         }
     }
     
+    static func sendChat(chatID: String, text: String) {
+        NetworkingProvider.request(router: NetworkingRouter.sendChat(chatID: chatID, text: text)) { (data: Any) in
+            let json = JSON(data)
+            print(json)
+        }
+    }
+    
 }

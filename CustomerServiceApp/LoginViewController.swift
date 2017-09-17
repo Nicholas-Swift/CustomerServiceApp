@@ -20,9 +20,10 @@ class LoginViewController: UIPageViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Log in", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        button.setTitleColor(UIColor.blue, for: .normal)
+        button.setTitleColor(UIColor.csaBlue(), for: .normal)
         button.layer.cornerRadius = 5
         button.clipsToBounds = true
+        button.addTarget(self, action: #selector(tapLogInButton), for: .touchUpInside)
         return button
     }()
     lazy var signUpButton: UIButton = {
@@ -31,9 +32,10 @@ class LoginViewController: UIPageViewController {
         button.setTitle("Sign up", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         button.setTitleColor(UIColor.csaWhite(), for: .normal)
-        button.backgroundColor = UIColor.blue
+        button.backgroundColor = UIColor.csaBlue()
         button.layer.cornerRadius = 5
         button.clipsToBounds = true
+        button.addTarget(self, action: #selector(tapSignUpButton), for: .touchUpInside)
         return button
     }()
     
@@ -83,11 +85,13 @@ extension LoginViewController {
     }
     
     func tapSignUpButton() {
-        
+        let signUpViewController = SignUpViewController.controllerFromNib()
+        self.present(signUpViewController, animated: true, completion: nil)
     }
     
     func tapLogInButton() {
-        
+        let actualLogInViewController = ActualLogInViewController.controllerFromNib()
+        self.present(actualLogInViewController, animated: true, completion: nil)
     }
     
 }

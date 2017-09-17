@@ -21,14 +21,15 @@ struct Chat {
     init?(json: JSON) {
         guard
             let id = json["_id"].string,
-            let user = User(json: json)
+            let user = User(json: json["chatUser"]),
+            let updatedAt = json["updatedAt"].string?.toISO8601Date
         else {
             return nil
         }
         let allMessages = json["messages"].arrayValue.flatMap { Message(json: $0) }
         let lastMessage = Message(text: json["lastMessage"].stringValue)
         let messages = allMessages.isEmpty ? [lastMessage] : allMessages
-        let updatedAt = json["updatedAt"].dateValue
+        
         
         self.init(id: id, user: user, messages: messages, updatedAt: updatedAt)
     }
