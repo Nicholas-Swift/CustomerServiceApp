@@ -25,6 +25,12 @@
 		0181DE301F6E296B00540CA4 /* UIColor+Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE2F1F6E296B00540CA4 /* UIColor+Project.swift */; };
 		0181DE321F6E433100540CA4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE311F6E433100540CA4 /* User.swift */; };
 		0181DE341F6E445D00540CA4 /* JSON+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE331F6E445D00540CA4 /* JSON+Date.swift */; };
+		0181DE361F6E5F7100540CA4 /* LoginViewControllerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE351F6E5F7100540CA4 /* LoginViewControllerPage.swift */; };
+		0181DE381F6E5F8700540CA4 /* LoginViewControllerPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0181DE371F6E5F8700540CA4 /* LoginViewControllerPage.xib */; };
+		0181DE3A1F6E690A00540CA4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE391F6E690A00540CA4 /* SignUpViewController.swift */; };
+		0181DE3C1F6E691600540CA4 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0181DE3B1F6E691600540CA4 /* SignUpViewController.xib */; };
+		0181DE3E1F6E6A4100540CA4 /* ActualLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE3D1F6E6A4100540CA4 /* ActualLogInViewController.swift */; };
+		0181DE401F6E6A4B00540CA4 /* ActualLogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0181DE3F1F6E6A4B00540CA4 /* ActualLogInViewController.xib */; };
 		01F86B5B1F6DE2A200271414 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F86B5A1F6DE2A200271414 /* AppDelegate.swift */; };
 		01F86B5D1F6DE2A200271414 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F86B5C1F6DE2A200271414 /* LoginViewController.swift */; };
 		01F86B601F6DE2A200271414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F86B5E1F6DE2A200271414 /* Main.storyboard */; };
@@ -57,6 +63,12 @@
 		0181DE2F1F6E296B00540CA4 /* UIColor+Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Project.swift"; sourceTree = "<group>"; };
 		0181DE311F6E433100540CA4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0181DE331F6E445D00540CA4 /* JSON+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSON+Date.swift"; sourceTree = "<group>"; };
+		0181DE351F6E5F7100540CA4 /* LoginViewControllerPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerPage.swift; sourceTree = "<group>"; };
+		0181DE371F6E5F8700540CA4 /* LoginViewControllerPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewControllerPage.xib; sourceTree = "<group>"; };
+		0181DE391F6E690A00540CA4 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0181DE3B1F6E691600540CA4 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		0181DE3D1F6E6A4100540CA4 /* ActualLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualLogInViewController.swift; sourceTree = "<group>"; };
+		0181DE3F1F6E6A4B00540CA4 /* ActualLogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActualLogInViewController.xib; sourceTree = "<group>"; };
 		01F86B571F6DE2A200271414 /* CustomerServiceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomerServiceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F86B5A1F6DE2A200271414 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01F86B5C1F6DE2A200271414 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -152,10 +164,16 @@
 			children = (
 				01F86B5C1F6DE2A200271414 /* LoginViewController.swift */,
 				01F86B701F6DE37F00271414 /* LoginViewController.xib */,
+				0181DE351F6E5F7100540CA4 /* LoginViewControllerPage.swift */,
+				0181DE371F6E5F8700540CA4 /* LoginViewControllerPage.xib */,
 				01F86B721F6DE3E500271414 /* MainFeedViewController.swift */,
 				01F86B741F6DE3FE00271414 /* MainFeedViewController.xib */,
 				010FFDEC1F6DEBDC00C37C47 /* ChatViewController.swift */,
 				010FFDEE1F6DEBE700C37C47 /* ChatViewController.xib */,
+				0181DE391F6E690A00540CA4 /* SignUpViewController.swift */,
+				0181DE3B1F6E691600540CA4 /* SignUpViewController.xib */,
+				0181DE3D1F6E6A4100540CA4 /* ActualLogInViewController.swift */,
+				0181DE3F1F6E6A4B00540CA4 /* ActualLogInViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -261,14 +279,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				010FFDFF1F6E17B000C37C47 /* ChatBarView.xib in Resources */,
+				0181DE381F6E5F8700540CA4 /* LoginViewControllerPage.xib in Resources */,
 				01F86B751F6DE3FE00271414 /* MainFeedViewController.xib in Resources */,
 				01F86B711F6DE37F00271414 /* LoginViewController.xib in Resources */,
 				010FFDF71F6DF46700C37C47 /* ChatMessageOtherTableViewCell.xib in Resources */,
 				010FFDEF1F6DEBE700C37C47 /* ChatViewController.xib in Resources */,
+				0181DE401F6E6A4B00540CA4 /* ActualLogInViewController.xib in Resources */,
 				01F86B651F6DE2A200271414 /* LaunchScreen.storyboard in Resources */,
 				01F86B791F6DE53500271414 /* ChatHeadTableViewCell.xib in Resources */,
 				01F86B621F6DE2A200271414 /* Assets.xcassets in Resources */,
 				010FFDF51F6DF2E000C37C47 /* ChatMessageSelfTableViewCell.xib in Resources */,
+				0181DE3C1F6E691600540CA4 /* SignUpViewController.xib in Resources */,
 				01F86B601F6DE2A200271414 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,13 +360,16 @@
 				010FFDFD1F6E17A800C37C47 /* ChatBarView.swift in Sources */,
 				010FFDEB1F6DE98900C37C47 /* UIResponder+Utilities.swift in Sources */,
 				010FFDF11F6DF27500C37C47 /* ChatMessageSelfTableViewCell.swift in Sources */,
+				0181DE3E1F6E6A4100540CA4 /* ActualLogInViewController.swift in Sources */,
 				0181DE2C1F6E25F700540CA4 /* Chat.swift in Sources */,
 				01F86B5B1F6DE2A200271414 /* AppDelegate.swift in Sources */,
 				010FFDED1F6DEBDC00C37C47 /* ChatViewController.swift in Sources */,
+				0181DE3A1F6E690A00540CA4 /* SignUpViewController.swift in Sources */,
 				01F86B771F6DE50B00271414 /* ChatHeadTableViewCell.swift in Sources */,
 				0181DE341F6E445D00540CA4 /* JSON+Date.swift in Sources */,
 				010FFE011F6E1EA400C37C47 /* NetworkingRouter.swift in Sources */,
 				0181DE301F6E296B00540CA4 /* UIColor+Project.swift in Sources */,
+				0181DE361F6E5F7100540CA4 /* LoginViewControllerPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

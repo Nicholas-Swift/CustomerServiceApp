@@ -18,9 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        let initialViewController = MainFeedViewController.controllerFromNib()
-        let navigationController = UINavigationController(rootViewController: initialViewController)
-        self.window?.rootViewController = navigationController
+//        let initialViewController = MainFeedViewController.controllerFromNib()
+//        let navigationController = UINavigationController(rootViewController: initialViewController)
+        let initialViewController = LoginViewController.controllerFromNib()
+        
+        self.window?.rootViewController = initialViewController //navigationController
         self.window?.makeKeyAndVisible()
         
         return true
