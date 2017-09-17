@@ -15,7 +15,8 @@ class ChatViewController: UIViewController {
     
     // MARK: - Subviews
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var chatBarView: UIView!
+    @IBOutlet weak var chatBarViewPlaceholder: UIView!
+    var chatBarView: ChatBarView!
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -58,11 +59,12 @@ extension ChatViewController {
 extension ChatViewController {
     
     func setupViews() {
-        
-        // Navigation Item
         navigationItem.title = "Brian Hans"
-        
-        // Table View
+        setupTableView()
+        setupChatBarView()
+    }
+    
+    func setupTableView() {
         tableView.register(ChatMessageOtherTableViewCell.nib(), forCellReuseIdentifier: ChatMessageOtherTableViewCell.toString())
         tableView.register(ChatMessageSelfTableViewCell.nib(), forCellReuseIdentifier: ChatMessageSelfTableViewCell.toString())
         
@@ -73,6 +75,18 @@ extension ChatViewController {
         tableView.dataSource = self
         
         tableView.separatorColor = UIColor.clear
+        let bottomIndexPath = IndexPath(row: messages.count - 1, section: 0)
+        tableView.scrollToRow(at: bottomIndexPath, at: .bottom, animated: false)
+    }
+    
+    func setupChatBarView() {
+        chatBarView = ChatBarView.instanceFromNib() as! ChatBarView
+        self.view.addSubview(chatBarView)
+        NSLayoutConstraint.activate([
+            chatBarView.topAnchor.constraint(equalTo: chatBarViewPlaceholder.topAnchor),
+            chatBarView.bottomAnchor.constraint(equalTo: chatBarViewPlaceholder.bottomAnchor),
+            chatBarView.leftAnchor.constraint(equalTo: chatBarViewPlaceholder.leftAnchor),
+            chatBarView.rightAnchor.constraint(equalTo: chatBarViewPlaceholder.rightAnchor)])
     }
     
 }

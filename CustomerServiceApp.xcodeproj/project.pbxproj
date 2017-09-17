@@ -15,6 +15,8 @@
 		010FFDF51F6DF2E000C37C47 /* ChatMessageSelfTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010FFDF41F6DF2E000C37C47 /* ChatMessageSelfTableViewCell.xib */; };
 		010FFDF71F6DF46700C37C47 /* ChatMessageOtherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010FFDF61F6DF46700C37C47 /* ChatMessageOtherTableViewCell.xib */; };
 		010FFDF91F6DFB5200C37C47 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010FFDF81F6DFB5200C37C47 /* Message.swift */; };
+		010FFDFD1F6E17A800C37C47 /* ChatBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010FFDFC1F6E17A800C37C47 /* ChatBarView.swift */; };
+		010FFDFF1F6E17B000C37C47 /* ChatBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010FFDFE1F6E17B000C37C47 /* ChatBarView.xib */; };
 		01F86B5B1F6DE2A200271414 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F86B5A1F6DE2A200271414 /* AppDelegate.swift */; };
 		01F86B5D1F6DE2A200271414 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F86B5C1F6DE2A200271414 /* LoginViewController.swift */; };
 		01F86B601F6DE2A200271414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F86B5E1F6DE2A200271414 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 		010FFDF41F6DF2E000C37C47 /* ChatMessageSelfTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatMessageSelfTableViewCell.xib; sourceTree = "<group>"; };
 		010FFDF61F6DF46700C37C47 /* ChatMessageOtherTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatMessageOtherTableViewCell.xib; sourceTree = "<group>"; };
 		010FFDF81F6DFB5200C37C47 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		010FFDFC1F6E17A800C37C47 /* ChatBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBarView.swift; sourceTree = "<group>"; };
+		010FFDFE1F6E17B000C37C47 /* ChatBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatBarView.xib; sourceTree = "<group>"; };
 		01F86B571F6DE2A200271414 /* CustomerServiceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomerServiceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F86B5A1F6DE2A200271414 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01F86B5C1F6DE2A200271414 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				010FFDF41F6DF2E000C37C47 /* ChatMessageSelfTableViewCell.xib */,
 				010FFDF21F6DF28A00C37C47 /* ChatMessageOtherTableViewCell.swift */,
 				010FFDF61F6DF46700C37C47 /* ChatMessageOtherTableViewCell.xib */,
+				010FFDFC1F6E17A800C37C47 /* ChatBarView.swift */,
+				010FFDFE1F6E17B000C37C47 /* ChatBarView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -203,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010FFDFF1F6E17B000C37C47 /* ChatBarView.xib in Resources */,
 				01F86B751F6DE3FE00271414 /* MainFeedViewController.xib in Resources */,
 				01F86B711F6DE37F00271414 /* LoginViewController.xib in Resources */,
 				010FFDF71F6DF46700C37C47 /* ChatMessageOtherTableViewCell.xib in Resources */,
@@ -226,6 +233,7 @@
 				01F86B5D1F6DE2A200271414 /* LoginViewController.swift in Sources */,
 				01F86B731F6DE3E500271414 /* MainFeedViewController.swift in Sources */,
 				010FFDF91F6DFB5200C37C47 /* Message.swift in Sources */,
+				010FFDFD1F6E17A800C37C47 /* ChatBarView.swift in Sources */,
 				010FFDEB1F6DE98900C37C47 /* UIResponder+Utilities.swift in Sources */,
 				010FFDF11F6DF27500C37C47 /* ChatMessageSelfTableViewCell.swift in Sources */,
 				01F86B5B1F6DE2A200271414 /* AppDelegate.swift in Sources */,
