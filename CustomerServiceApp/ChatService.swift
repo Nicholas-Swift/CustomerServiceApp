@@ -11,7 +11,7 @@ import Foundation
 class ChatService {
     
     static func getChats() {
-        
+        NetworkingProvider.request(router: NetworkingRouter.chat)
     }
     
     static func showChat(id: String) {

@@ -19,6 +19,7 @@ class MainFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupModels()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,6 +54,15 @@ extension MainFeedViewController {
         tableView.dataSource = self
         
         tableView.separatorColor = UIColor.clear
+    }
+    
+}
+
+// MARK: - Setup Models
+extension MainFeedViewController {
+    
+    func setupModels() {
+        ChatService.getChats()
     }
     
 }

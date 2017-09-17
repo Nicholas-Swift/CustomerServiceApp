@@ -35,22 +35,7 @@ class ChatViewController: UIViewController {
 extension ChatViewController {
     
     func setupModels() {
-        messages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world."))
-        messages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
-        messages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world Hello world. Hello world Hello world Hello world"))
-        messages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
-        messages.append(Message(text: "Hello world. Hello world. Hello world. Hello world"))
-        messages.append(Message(text: "Hello world. Hello world Hello world Hello world Hello world Hello world Hello world. Hello world. Hello world. Hello world. Hello world"))
-        messages.append(Message(text: "Hello world. Hello world. Hello world. Hello world"))
-        messages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
-        messages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world."))
-        messages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
-        messages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world Hello world. Hello world Hello world Hello world"))
-        messages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
-        messages.append(Message(text: "Hello world. Hello world. Hello world. Hello world"))
-        messages.append(Message(text: "Hello world. Hello world Hello world Hello world Hello world Hello world Hello world. Hello world. Hello world. Hello world. Hello world"))
-        messages.append(Message(text: "Hello world. Hello world. Hello world. Hello world"))
-        messages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
+        self.messages = TESTmessages()
     }
     
 }
@@ -59,9 +44,13 @@ extension ChatViewController {
 extension ChatViewController {
     
     func setupViews() {
-        navigationItem.title = "Brian Hans"
+        setupNavigationItem()
         setupTableView()
         setupChatBarView()
+    }
+    
+    func setupNavigationItem() {
+        navigationItem.title = "Brian Hans"
     }
     
     func setupTableView() {
@@ -127,6 +116,32 @@ extension ChatViewController: UITableViewDataSource {
             cell.set(text: message.text)
             return cell
         }
+    }
+    
+}
+
+// MARK: - TEST DATA
+extension ChatViewController {
+    
+    func TESTmessages() -> [Message] {
+        var newMessages: [Message] = []
+        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world."))
+        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
+        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world Hello world. Hello world Hello world Hello world"))
+        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
+        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world"))
+        newMessages.append(Message(text: "Hello world. Hello world Hello world Hello world Hello world Hello world Hello world. Hello world. Hello world. Hello world. Hello world"))
+        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world"))
+        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
+        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world."))
+        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
+        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world Hello world. Hello world Hello world Hello world"))
+        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
+        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world"))
+        newMessages.append(Message(text: "Hello world. Hello world Hello world Hello world Hello world Hello world Hello world. Hello world. Hello world. Hello world. Hello world"))
+        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world"))
+        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
+        return newMessages
     }
     
 }

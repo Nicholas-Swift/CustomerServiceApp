@@ -15,7 +15,8 @@ class NetworkingProvider {
         let url = router.baseURL + router.path
         Alamofire.request(url, method: router.method, parameters: router.parameters, encoding: JSONEncoding.default, headers: router.headers).responseJSON { response in
             switch (response.result) {
-            case .success: // (let value)
+            case .success(let value):
+                print(value)
                 print("There was a success")
             case.failure(let error):
                 print("There was an error \(error)")

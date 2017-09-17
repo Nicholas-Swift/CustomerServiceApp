@@ -13,13 +13,13 @@ enum NetworkingRouter {
     case chat
     
     public var baseURL: String {
-        return "https://api.myservice.com"
+        return "https://customer-service-backend.herokuapp.com"
     }
     
     public var path: String {
-        switch(self) {
+        switch self {
         case .chat:
-            return "/bruh"
+            return "/chat"
         }
     }
     
@@ -31,7 +31,11 @@ enum NetworkingRouter {
     }
     
     var headers: [String: String] {
-        return ["Content-type": "application/json"]
+        switch self {
+        case .chat:
+            return [:]
+        }
+        //return ["Content-type": "application/json"]
     }
     
     var parameters: [String: Any] {
