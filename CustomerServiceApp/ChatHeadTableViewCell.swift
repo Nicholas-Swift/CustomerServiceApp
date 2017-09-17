@@ -42,6 +42,16 @@ extension ChatHeadTableViewCell {
     
 }
 
+// MARK: - Setup Models
+extension ChatHeadTableViewCell {
+    
+    func setupModel(chat: Chat) {
+        usernameLabel.text = chat.user.name
+        messageLabel.text = chat.messages.last?.text
+    }
+    
+}
+
 // MARK: - View Helpers
 extension ChatHeadTableViewCell {
     

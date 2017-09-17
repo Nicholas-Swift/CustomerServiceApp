@@ -11,6 +11,7 @@ import UIKit
 class MainFeedViewController: UIViewController {
     
     // MARK: - Instance Vars
+    var chats: [Chat] = []
     
     // MARK: - Subviews
     @IBOutlet weak var tableView: UITableView!
@@ -62,7 +63,10 @@ extension MainFeedViewController {
 extension MainFeedViewController {
     
     func setupModels() {
-        ChatService.getChats()
+        ChatService.getChats() { (chats: [Chat]) in
+            self.chats = chats
+            self.tableView.reloadData()
+        }
     }
     
 }
@@ -71,7 +75,9 @@ extension MainFeedViewController {
 extension MainFeedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let chatViewController = ChatViewController.controllerFromNib()
+        let chatViewController = ChatViewController.controllerFromNib() as! ChatViewController
+        let chat = chats[indexPath.row]
+        chatViewController.setupModels(oldChat: chat)
         self.navigationController?.pushViewController(chatViewController, animated: true)
     }
     
@@ -85,13 +91,16 @@ extension MainFeedViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return chats.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChatHeadTableViewCell.toString(), for: indexPath)
             as! ChatHeadTableViewCell
+        let chat = chats[indexPath.row]
+        
         cell.profilePictureImageView.image = TESTprofilePicture()
+        cell.setupModel(chat: chat)
         cell.setStylingSeen()
         return cell
     }

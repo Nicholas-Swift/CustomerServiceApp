@@ -18,12 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        ChatService.getChats()
-        
-//        let initialViewController = MainFeedViewController.controllerFromNib()
-//        let navigationController = UINavigationController(rootViewController: initialViewController)
-//        self.window?.rootViewController = navigationController
-//        self.window?.makeKeyAndVisible()
+        let initialViewController = MainFeedViewController.controllerFromNib()
+        let navigationController = UINavigationController(rootViewController: initialViewController)
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
         
         return true
     }

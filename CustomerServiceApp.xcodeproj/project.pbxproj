@@ -23,6 +23,8 @@
 		0181DE2C1F6E25F700540CA4 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE2B1F6E25F700540CA4 /* Chat.swift */; };
 		0181DE2E1F6E280F00540CA4 /* Array+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE2D1F6E280F00540CA4 /* Array+Random.swift */; };
 		0181DE301F6E296B00540CA4 /* UIColor+Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE2F1F6E296B00540CA4 /* UIColor+Project.swift */; };
+		0181DE321F6E433100540CA4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE311F6E433100540CA4 /* User.swift */; };
+		0181DE341F6E445D00540CA4 /* JSON+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181DE331F6E445D00540CA4 /* JSON+Date.swift */; };
 		01F86B5B1F6DE2A200271414 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F86B5A1F6DE2A200271414 /* AppDelegate.swift */; };
 		01F86B5D1F6DE2A200271414 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F86B5C1F6DE2A200271414 /* LoginViewController.swift */; };
 		01F86B601F6DE2A200271414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F86B5E1F6DE2A200271414 /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		0181DE2B1F6E25F700540CA4 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		0181DE2D1F6E280F00540CA4 /* Array+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Random.swift"; sourceTree = "<group>"; };
 		0181DE2F1F6E296B00540CA4 /* UIColor+Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Project.swift"; sourceTree = "<group>"; };
+		0181DE311F6E433100540CA4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0181DE331F6E445D00540CA4 /* JSON+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSON+Date.swift"; sourceTree = "<group>"; };
 		01F86B571F6DE2A200271414 /* CustomerServiceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomerServiceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F86B5A1F6DE2A200271414 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01F86B5C1F6DE2A200271414 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 				010FFDEA1F6DE98900C37C47 /* UIResponder+Utilities.swift */,
 				0181DE2D1F6E280F00540CA4 /* Array+Random.swift */,
 				0181DE2F1F6E296B00540CA4 /* UIColor+Project.swift */,
+				0181DE331F6E445D00540CA4 /* JSON+Date.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 		01F86B6E1F6DE30800271414 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0181DE311F6E433100540CA4 /* User.swift */,
 				010FFDF81F6DFB5200C37C47 /* Message.swift */,
 				0181DE2B1F6E25F700540CA4 /* Chat.swift */,
 			);
@@ -329,6 +335,7 @@
 				010FFE031F6E1EB600C37C47 /* NetworkingProvider.swift in Sources */,
 				01F86B731F6DE3E500271414 /* MainFeedViewController.swift in Sources */,
 				010FFDF91F6DFB5200C37C47 /* Message.swift in Sources */,
+				0181DE321F6E433100540CA4 /* User.swift in Sources */,
 				010FFDFD1F6E17A800C37C47 /* ChatBarView.swift in Sources */,
 				010FFDEB1F6DE98900C37C47 /* UIResponder+Utilities.swift in Sources */,
 				010FFDF11F6DF27500C37C47 /* ChatMessageSelfTableViewCell.swift in Sources */,
@@ -336,6 +343,7 @@
 				01F86B5B1F6DE2A200271414 /* AppDelegate.swift in Sources */,
 				010FFDED1F6DEBDC00C37C47 /* ChatViewController.swift in Sources */,
 				01F86B771F6DE50B00271414 /* ChatHeadTableViewCell.swift in Sources */,
+				0181DE341F6E445D00540CA4 /* JSON+Date.swift in Sources */,
 				010FFE011F6E1EA400C37C47 /* NetworkingRouter.swift in Sources */,
 				0181DE301F6E296B00540CA4 /* UIColor+Project.swift in Sources */,
 			);

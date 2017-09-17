@@ -11,7 +11,7 @@ import UIKit
 class ChatViewController: UIViewController {
     
     // MARK: - Instance Vars
-    var messages: [Message] = []
+    var chat: Chat?
     
     // MARK: - Subviews
     @IBOutlet weak var tableView: UITableView!
@@ -21,8 +21,12 @@ class ChatViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupModels()
         setupViews()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: self.view.window)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: self.view.window)
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,8 +38,14 @@ class ChatViewController: UIViewController {
 // MARK: - Setup Models
 extension ChatViewController {
     
-    func setupModels() {
-        self.messages = TESTmessages()
+    func setupModels(oldChat: Chat) {
+        navigationItem.title = oldChat.user.name
+        ChatService.showChat(id: oldChat.id) { [weak self] (chat: Chat) in
+            self?.chat = chat
+            self?.tableView.reloadData()
+            let bottomIndexPath = IndexPath(row: chat.messages.count - 1, section: 0)
+            self?.tableView.scrollToRow(at: bottomIndexPath, at: .bottom, animated: false)
+        }
     }
     
 }
@@ -44,13 +54,9 @@ extension ChatViewController {
 extension ChatViewController {
     
     func setupViews() {
-        setupNavigationItem()
         setupTableView()
         setupChatBarView()
-    }
-    
-    func setupNavigationItem() {
-        navigationItem.title = "Brian Hans"
+        setupKeyboard()
     }
     
     func setupTableView() {
@@ -66,9 +72,6 @@ extension ChatViewController {
         
         tableView.contentInset = UIEdgeInsetsMake(64, 0, 48, 0)
         tableView.scrollIndicatorInsets = UIEdgeInsetsMake(64, 0, 48, 0)
-        
-        let bottomIndexPath = IndexPath(row: messages.count - 1, section: 0)
-        tableView.scrollToRow(at: bottomIndexPath, at: .bottom, animated: false)
     }
     
     func setupChatBarView() {
@@ -80,6 +83,38 @@ extension ChatViewController {
             chatBarView.bottomAnchor.constraint(equalTo: chatBarViewPlaceholder.bottomAnchor),
             chatBarView.leftAnchor.constraint(equalTo: chatBarViewPlaceholder.leftAnchor),
             chatBarView.rightAnchor.constraint(equalTo: chatBarViewPlaceholder.rightAnchor)])
+    }
+    
+}
+
+// MARK: - Keyboard
+extension ChatViewController {
+    
+    func setupKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: .UIKeyboardWillShow , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: .UIKeyboardWillHide , object: nil)
+    }
+    
+    func keyboardWillShow(_ notification: NSNotification) {
+        let keyboardSize: CGSize = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.size
+        let height = min(keyboardSize.height, keyboardSize.width)
+        shrinkDisplay(height)
+    }
+    
+    func keyboardWillHide(_ notification: NSNotification) {
+        enlargeDisplay()
+    }
+    
+    func shrinkDisplay(_ height: CGFloat) {
+        UIView.animate(withDuration: 0.5) {
+            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - height)
+        }
+    }
+    
+    func enlargeDisplay() {
+        UIView.animate(withDuration: 0.5) {
+            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: UIScreen.main.bounds.height)
+        }
     }
     
 }
@@ -101,47 +136,20 @@ extension ChatViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
+        return chat?.messages.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let message = messages[indexPath.row]
-        
-        if indexPath.row % 2 == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ChatMessageSelfTableViewCell.toString(), for: indexPath) as! ChatMessageSelfTableViewCell
-            cell.set(text: message.text)
-            return cell
-        } else {
+        let message = chat!.messages[indexPath.row]
+        if message.fromUser {
             let cell = tableView.dequeueReusableCell(withIdentifier: ChatMessageOtherTableViewCell.toString(), for: indexPath) as! ChatMessageOtherTableViewCell
             cell.set(text: message.text)
             return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ChatMessageSelfTableViewCell.toString(), for: indexPath) as! ChatMessageSelfTableViewCell
+            cell.set(text: message.text)
+            return cell
         }
-    }
-    
-}
-
-// MARK: - TEST DATA
-extension ChatViewController {
-    
-    func TESTmessages() -> [Message] {
-        var newMessages: [Message] = []
-        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world."))
-        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
-        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world Hello world. Hello world Hello world Hello world"))
-        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
-        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world"))
-        newMessages.append(Message(text: "Hello world. Hello world Hello world Hello world Hello world Hello world Hello world. Hello world. Hello world. Hello world. Hello world"))
-        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world"))
-        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
-        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world."))
-        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
-        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world. Hello world Hello world. Hello world Hello world Hello world"))
-        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
-        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world"))
-        newMessages.append(Message(text: "Hello world. Hello world Hello world Hello world Hello world Hello world Hello world. Hello world. Hello world. Hello world. Hello world"))
-        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world"))
-        newMessages.append(Message(text: "Hello world. Hello world. Hello world. Hello world. Hello world. Hello world"))
-        return newMessages
     }
     
 }

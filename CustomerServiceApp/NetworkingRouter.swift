@@ -10,7 +10,8 @@ import Foundation
 import Alamofire
 
 enum NetworkingRouter {
-    case chat
+    case getChat
+    case showChat(id: String)
     
     public var baseURL: String {
         return "https://customer-service-backend.herokuapp.com"
@@ -18,30 +19,34 @@ enum NetworkingRouter {
     
     public var path: String {
         switch self {
-        case .chat:
+        case .getChat:
             return "/chat"
+        case .showChat(let id):
+            return "/chat/\(id)"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .chat:
+        case .getChat:
+            return .get
+        case .showChat:
             return .get
         }
     }
     
-    var headers: [String: String] {
+    var headers: [String: String]? {
         switch self {
-        case .chat:
-            return [:]
+        case .getChat, .showChat:
+            return nil
         }
         //return ["Content-type": "application/json"]
     }
     
-    var parameters: [String: Any] {
+    var parameters: [String: Any]? {
         switch self {
-        case .chat:
-            return [:]
+        case .getChat, .showChat:
+            return nil
         }
     }
 }

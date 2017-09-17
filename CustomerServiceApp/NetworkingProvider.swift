@@ -11,15 +11,15 @@ import Alamofire
 
 class NetworkingProvider {
     
-    static func request(router: NetworkingRouter) {
+    static func request(router: NetworkingRouter, completionHandler: @escaping ((Any) -> Void)) {
         let url = router.baseURL + router.path
         Alamofire.request(url, method: router.method, parameters: router.parameters, encoding: JSONEncoding.default, headers: router.headers).responseJSON { response in
             switch (response.result) {
             case .success(let value):
-                print(value)
-                print("There was a success")
+                completionHandler(value)
             case.failure(let error):
-                print("There was an error \(error)")
+                assertionFailure("There was an error with the network request")
+                completionHandler(error)
             }
         }
     }
